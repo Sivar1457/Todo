@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "My Vite Chrome Extension",
+    "version": "1.0",
+    "description": "A Chrome extension built with Vite and React",
+    "permissions": [
+      "tabs",
+      "activeTab",
+      "scripting"
+    ],
+    "host_permissions": [
+      "https://*/*",
+      "http://*/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://*/*", "http://*/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "index.html"
+    }
+  }
+  
